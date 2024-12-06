@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Film</title>
+</head>
+<body style="text-align: center;">
+
+<div class="container">
+
+    <div class="mt-3 mb-3">
+        <h3>Edición de película</h3>
+    </div>
+
+    <form id="edit-form" th:object="${filmEditDto}" th:action="@{/maintenance/edit/{id}(id=${filmEditDto.filmId})}" method="post">
+
+        <div class="mb-3 row">
+            <label for="filmId" class="col-sm-2">Código</label>
+            <div class="col-sm-10">
+                <input type="text"  id="filmId" class="form-control" th:field="*{filmId}">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="title" class="col-sm-2">Título</label>
+            <div class="col-sm-10">
+                <input type="text"  id="title" class="form-control" th:field="*{title}">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="description" class="col-sm-2">Descripción</label>
+            <div class="col-sm-10">
+                <input type="text"  id="description" class="form-control" th:field="*{description}">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="releaseYear" class="col-sm-2">Año de lanzamiento</label>
+            <div class="col-sm-10">
+                <input type="text"  id="releaseYear" class="form-control" th:field="*{releaseYear}">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="rentalDuration" class="col-sm-2">Duracion de Alquiler</label>
+            <div class="col-sm-10">
+                <input type="text"  id="rentalDuration" class="form-control" th:field="*{rentalDuration}">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="rentalRate" class="col-sm-2">Tarifa de Alquiler</label>
+            <div class="col-sm-10">
+                <input type="text"  id="rentalRate" class="form-control" th:field="*{rentalRate}">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="length" class="col-sm-2">Longitud</label>
+            <div class="col-sm-10">
+                <input type="text"  id="length" class="form-control" th:field="*{length}">
+            </div>
+        </div>
+
+
+        <div class="mb-3 row">
+            <label for="replacementCost" class="col-sm-2">Costo de reemplazo</label>
+            <div class="col-sm-10">
+                <input type="text"  id="replacementCost" class="form-control" th:field="*{replacementCost}">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="rating" class="col-sm-2">Clasificación</label>
+            <div class="col-sm-10">
+                <input type="text"  id="rating" class="form-control" th:field="*{rating}">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="specialFeatures" class="col-sm-2">Caracteristicas especiales</label>
+            <div class="col-sm-10">
+                <input type="text"  id="specialFeatures" class="form-control" th:field="*{specialFeatures}">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-sm-10 offset-sm-2">
+                <button id="confirm-edit-button" type="submit" class="btn btn-warning">Actualizar</button>
+            </div>
+        </div>
+
+    </form>
+
+
+
+</div>
+
+</body>
+</html>
